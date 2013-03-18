@@ -1,0 +1,33 @@
+.TH FORK "1" "February 2009" "fork 0.9" "User Commands"
+.SH NAME
+fork \- forks programs to background
+.SH SYNOPSIS
+.B fork
+[\fIOPTIONS\fR] \fIEXECUTABLE \fR[\fIPROGOPTIONS\fR]
+.SH DESCRIPTION
+Calls EXECUTABLE with the arguments PROGOPTIONS and quits. This will cause init
+to adopt the children and unbind the program from the calling terminal.
+.SH OPTIONS
+.TP
+\fB\-n\fR, \fB\-\-noredir\fR
+prevent the program's stdin and stderr to be redirected
+to /dev/null
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+display this help and exit
+.TP
+\fB\-v\fR  \fB\-\-version\fR
+output version information and exit
+.PP
+Exit status is 0 if OK, 1 if the commandline arguments are invalid, 2 if
+the process failed to fork, 3 if EXECUTABLE couldn't be called
+.SH AUTHOR
+Written by Simon Schönfeld
+.SH "REPORTING BUGS"
+Report bugs to <simon.schoenfeld@web.de>
+.SH COPYRIGHT
+Copyright \(co 2009-2009 Simon Schönfeld.
+.br
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
